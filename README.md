@@ -33,8 +33,6 @@ To run this project, follow these steps:
 git clone https://github.com/your-username/warehouse_management.git
 ```
 
-````
-
 2. Navigate to the project directory:
 
 ```bash
@@ -73,4 +71,7 @@ Feel free to customize the application according to your specific requirements. 
 
 This updated README.md file now includes information about the Django models you've created.
 ```
-````
+
+```
+
+```
