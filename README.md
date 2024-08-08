@@ -1,6 +1,3 @@
-Sure, I can help you update your README.md file with the new information about the Django models you've created. Here's an updated snippet:
-
-````markdown
 # Warehouse Management System
 
 This repository contains a Django web application designed to manage inventory in a warehouse. The application is built using Python and follows the standard Django project layout.
@@ -35,6 +32,7 @@ To run this project, follow these steps:
 ```bash
 git clone https://github.com/your-username/warehouse_management.git
 ```
+
 ````
 
 2. Navigate to the project directory:
@@ -75,3 +73,4 @@ Feel free to customize the application according to your specific requirements. 
 
 This updated README.md file now includes information about the Django models you've created.
 ```
+````
