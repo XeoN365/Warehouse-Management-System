@@ -1,0 +1,6 @@
+<h2>{{ form.instance.id|yesno:"Update Item, Create Item" }}</h2>
+<form method="post">
+  {% csrf_token %} {{ form.as_p }}
+  <button type="submit">Save</button>
+</form>
+<a href="{% url 'inventory_list' %}">Back to List</a>

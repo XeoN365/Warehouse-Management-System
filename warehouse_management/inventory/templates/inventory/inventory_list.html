@@ -1,0 +1,9 @@
+<h2>Inventory List</h2>
+<ul>
+  {% for item in items %}
+  <li>
+    <a href="{% url 'inventory_detail' item.pk %}"> {{ item.name }} </a>
+  </li>
+  {% endfor %}
+</ul>
+<a href="{% url 'inventory_create' %}">Add New Item</a>

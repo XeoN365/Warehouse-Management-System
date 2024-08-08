@@ -1,0 +1,9 @@
+<h2>{{ item.name }}</h2>
+<p>ID: {{ item.pk }}</p>
+<p>{{ item.description }}</p>
+<p>Quantity: {{ item.quantity }}</p>
+<p>Location: {{ item.location }}</p>
+<p>SKU: {{ item.sku }}</p>
+| <a href="{% url 'inventory_update' item.pk %}">Edit</a> |
+<a href="{% url 'inventory_confirm_delete' item.pk %}">Delete</a> |
+<a href="{% url 'inventory_list' %}">Back to List</a> |
