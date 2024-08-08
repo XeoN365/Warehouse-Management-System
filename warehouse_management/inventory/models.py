@@ -2,6 +2,7 @@ from django.db import models
 import uuid
 
 
+# Inventory aka Item Model
 class Inventory(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=100)
@@ -14,6 +15,7 @@ class Inventory(models.Model):
         return self.name
 
 
+# Order Model
 class Order(models.Model):
     order_number = models.UUIDField(
         primary_key=True, default=uuid.uuid4, editable=False
@@ -26,6 +28,7 @@ class Order(models.Model):
         return f"Order #{self.order_number}"
 
 
+# Order Item Model
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
     inventory = models.ForeignKey(Inventory, on_delete=models.CASCADE)
@@ -37,6 +40,7 @@ class OrderItem(models.Model):
         )
 
 
+# Shipping Model
 class Shipping(models.Model):
     order = models.OneToOneField(Order, on_delete=models.CASCADE, primary_key=True)
     address = models.CharField(max_length=255)
