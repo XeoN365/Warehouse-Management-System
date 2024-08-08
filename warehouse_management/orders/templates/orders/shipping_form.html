@@ -1,0 +1,6 @@
+<h2>Add Shipping Details</h2>
+<form method="post">
+  {% csrf_token %} {{ form.as_p }}
+  <button type="submit">Save</button>
+</form>
+<a href="{% url 'order_detail' order.pk %}">Back to order details</a>

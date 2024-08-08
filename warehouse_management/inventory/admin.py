@@ -1,8 +1,5 @@
 from django.contrib import admin
-from .models import Inventory, Order, OrderItem, Shipping
+from .models import Inventory
 
 # Register models to admin site
 admin.site.register(Inventory)
-admin.site.register(Order)
-admin.site.register(OrderItem)
-admin.site.register(Shipping)

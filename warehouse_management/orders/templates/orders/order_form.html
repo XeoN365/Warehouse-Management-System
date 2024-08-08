@@ -1,0 +1,6 @@
+<h2>{{ form.instance.pk|yesno:"Update Order, Create Order"}}</h2>
+<form method="post">
+  {% csrf_token %} {{ form.as_p }}
+  <button type="submit">Save</button>
+</form>
+<a href="{% url 'order_list' %}">Back to list</a>

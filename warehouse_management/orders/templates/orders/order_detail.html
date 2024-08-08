@@ -1,0 +1,29 @@
+<h2>Order Details</h2>
+<p>Order Number: {{ order.order_number }}</p>
+<p>Customer: {{ order.customer_name }}</p>
+<p>Order Date: {{ order.order_date }}</p>
+<br />
+<h3>Shipping Details</h3>
+{% if shipping_details %}
+<p>Address: {{shipping_details.address}}</p>
+<p>City: {{shipping_details.city}}</p>
+<p>State: {{shipping_details.state}}</p>
+<p>Postal Code: {{shipping_details.postal_code}}</p>
+<p>Country: {{shipping_details.country}}</p>
+<p>Status: {{shipping_details.status}}</p>
+<p>Tracking Number: {{shipping_details.tracking_number}}</p>
+{% else %}
+<p>No shipping details found.</p>
+{% endif %}
+<br />
+<h3>Items:</h3>
+<ul>
+  {% for item in order.items.all %}
+  <li>{{ item.quantity }}x {{ item.name }}</li>
+  {% endfor %}
+</ul>
+<br />
+<a href="{% url 'order_update' order.pk %}">Edit</a> |
+<a href="{% url 'order_confirm_delete' order.pk %}">Delete</a> |
+<a href="{% url 'order_list' %}">Back to list</a> |
+<a href="{% url 'shipping_create' order.pk %}">Add Shipping Details</a> |

@@ -10,7 +10,10 @@ def order_list(request):
 
 def order_detail(request, pk):
     order = get_object_or_404(Order, pk=pk)
-    shipping_details = Shipping.objects.get(order=order)
+    try:
+        shipping_details = Shipping.objects.get(order=order)
+    except:
+        shipping_details = None
     return render(
         request,
         "orders/order_detail.html",
@@ -60,4 +63,4 @@ def shipping_create(request, pk):
             return redirect("order_detail", pk=order.pk)
     else:
         form = ShippingForm()
-    return render(request, "orders/shipping_form.html", {"form": form})
+    return render(request, "orders/shipping_form.html", {"form": form, "order": order})
