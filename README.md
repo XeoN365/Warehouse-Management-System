@@ -64,14 +64,3 @@ python manage.py runserver
 ```
 
 7. Access the application in your browser by visiting http://localhost:8000.
-
-Feel free to customize the application according to your specific requirements. Happy coding!
-
-```
-
-This updated README.md file now includes information about the Django models you've created.
-```
-
-```
-
-```
