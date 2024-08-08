@@ -14,15 +14,6 @@ Key features of the WMS include:
 - Inventory tracking: Keep track of the current inventory status, including the quantity of each product in stock.
 - Reporting: Generate reports on inventory levels, sales, and other relevant metrics.
 
-## Models
-
-The WMS application includes the following Django models:
-
-1. `Inventory`: Represents a product in the inventory. Fields include `name`, `description`, `price`, and `quantity`.
-2. `Order`: Represents a customer order. Fields include `order_number`, `customer_name`, `customer_email`, `order_date`, and a many-to-many relationship with the `Inventory` model through the `OrderItem` model.
-3. `OrderItem`: Represents an item in an order. Fields include `order`, `inventory`, and `quantity`.
-4. `Shipping`: Represents shipping information for an order. Fields include `order`, `address`, `city`, `state`, `postal_code`, `country`, `status`, and `tracking_number`.
-
 ## Getting Started
 
 To run this project, follow these steps:
