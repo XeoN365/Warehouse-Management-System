@@ -19,7 +19,7 @@
 <h3>Items:</h3>
 <ul>
   {% for item in order.items.all %}
-  <li>{{ item.quantity }}x {{ item.name }}</li>
+  <li>{{ order.quantity }}x {{ item.name }}</li>
   {% endfor %}
 </ul>
 <br />
@@ -27,3 +27,4 @@
 <a href="{% url 'order_confirm_delete' order.pk %}">Delete</a> |
 <a href="{% url 'order_list' %}">Back to list</a> |
 <a href="{% url 'shipping_create' order.pk %}">Add Shipping Details</a> |
+<a href=" {% url 'index' %} ">Go back Home</button>

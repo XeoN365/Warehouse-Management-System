@@ -12,6 +12,7 @@ class Order(models.Model):
     customer_email = models.EmailField()
     order_date = models.DateTimeField(auto_now_add=True)
     items = models.ManyToManyField(Inventory, through="OrderItem")
+    quantity = models.PositiveIntegerField(default=1)
 
     def __str__(self):
         return f"Order #{self.order_number}"
@@ -21,7 +22,6 @@ class Order(models.Model):
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
     inventory = models.ForeignKey(Inventory, on_delete=models.CASCADE)
-    quantity = models.PositiveBigIntegerField(default=1)
 
     def __str__(self):
         return (

@@ -5,7 +5,7 @@ from .models import Order, Shipping
 class OrderForm(forms.ModelForm):
     class Meta:
         model = Order
-        fields = ["customer_name", "customer_email", "items"]
+        fields = ["customer_name", "customer_email", "items", "quantity"]
         widgets = {
             "customer_name": forms.TextInput(
                 attrs={"placeholder": "Enter customer's name"}

@@ -1,13 +1,16 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Order, Shipping
 from .forms import OrderForm, ShippingForm
+from django.contrib.auth.decorators import login_required
 
 
+@login_required
 def order_list(request):
     orders = Order.objects.all()
     return render(request, "orders/order_list.html", {"orders": orders})
 
 
+@login_required
 def order_detail(request, pk):
     order = get_object_or_404(Order, pk=pk)
     try:
@@ -21,6 +24,7 @@ def order_detail(request, pk):
     )
 
 
+@login_required
 def order_create(request):
     if request.method == "POST":
         form = OrderForm(request.POST)
@@ -32,6 +36,7 @@ def order_create(request):
     return render(request, "orders/order_form.html", {"form": form})
 
 
+@login_required
 def order_update(request, pk):
     order = get_object_or_404(Order, pk=pk)
     if request.method == "POST":
@@ -44,14 +49,16 @@ def order_update(request, pk):
     return render(request, "orders/order_form.html", {"form": form})
 
 
+@login_required
 def order_delete(request, pk):
     order = get_object_or_404(Order, pk=pk)
     if request.method == "POST":
         order.delete()
         return redirect("order_list")
-    return render(request, "orders/order_delete_confirm.html", {"order": order})
+    return render(request, "orders/order_confirm_delete.html", {"order": order})
 
 
+@login_required
 def shipping_create(request, pk):
     order = get_object_or_404(Order, pk=pk)
     if request.method == "POST":

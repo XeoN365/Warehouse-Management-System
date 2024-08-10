@@ -1,0 +1,7 @@
+<h2>Very Nice Homepage</h2>
+<h3>Menu :</h3>
+<ul>
+  {% for name, url in apps %}
+  <li><a href="{% url url %}">{{ name }}</a></li>
+  {% endfor %}
+</ul>

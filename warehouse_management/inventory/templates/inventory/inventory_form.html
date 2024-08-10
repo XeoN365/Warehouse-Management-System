@@ -3,4 +3,5 @@
   {% csrf_token %} {{ form.as_p }}
   <button type="submit">Save</button>
 </form>
-<a href="{% url 'inventory_list' %}">Back to List</a>
+<a href="{% url 'inventory_list' %}">Back to List</a> |
+<a href=" {% url 'index' %} ">Go back Home</button>

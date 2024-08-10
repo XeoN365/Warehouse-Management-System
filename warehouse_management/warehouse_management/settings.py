@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "inventory",
     "orders",
+    "authenticate",
+    "home",
 ]
 
 MIDDLEWARE = [
@@ -125,3 +127,7 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/authenticate/login"
+LOGIN_URL = "/authenticate/login/"
