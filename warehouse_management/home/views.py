@@ -8,7 +8,9 @@ def index(request):
     ]
     links_to_apps = ["inventory_list", "order_list"]
     if request.user.is_authenticated:
+        names_of_apps.append("Admin")
         names_of_apps.append("Logout")
+        links_to_apps.append("admin:index")
         links_to_apps.append("user_logout")
     else:
         names_of_apps.append("Login")
